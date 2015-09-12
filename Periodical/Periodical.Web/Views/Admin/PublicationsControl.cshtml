@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Periodical.Web.Models.Admin.PublicationControlModel>
+
+@{
+    ViewBag.Title = "Управление изданиями";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Управление изданиями
+}
+
+<div class="add-button">
+    <a href="@Url.Action("EditPublication", "Admin")" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Добавить издание
+    </a>
+</div>
+<div class="add-button">
+    <a href="@Url.Action("EditPublication", "Admin")" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Добавить издание
+    </a>
+</div>
+<fieldset>
+    <h3>Издания</h3>
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp users-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(x => x.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Publisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(x => x.TimesInYear)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(x => x.SubscribersCount)
+            </th>
+            <th>
+                Изменить
+            </th>
+            <th>
+                Удалить
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.Publisher)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.TimesInYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.SubscribersCount)
+                </td>
+                <td>
+                    <a href="@Url.Action("EditPublication", "Admin", new { id = item.PublicationId })" class="mdl-button mdl-js-button mdl-button--icon user-control-button">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("DeletePublication", "Admin", new { id = item.PublicationId })" class="mdl-button mdl-js-button mdl-button--icon need-confirm user-control-button">
+                        <i class="material-icons">delete</i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</fieldset>

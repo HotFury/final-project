@@ -1,0 +1,199 @@
+﻿@model Periodical.Web.Models.PersonalArea.UserRequsitiesModel
+
+@{
+    ViewBag.Title = "Реквизиты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Упарвление реквезитами
+}
+
+@using (Html.BeginForm("ManageRequisities","PersonalArea")) {
+    @Html.HiddenFor(model => model.Nick)
+    @Html.AntiForgeryToken()
+    <fieldset>
+        @Html.ValidationSummary(true)
+        <div>
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="LastName">
+                    <i class="material-icons">contacts</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label name-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.LastName, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.LastName, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="FirstName">
+                    <i class="material-icons">contacts</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label name-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.FirstName, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.FirstName, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="MiddleName">
+                    <i class="material-icons">contacts</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label name-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.MiddleName, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.MiddleName, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.LastName, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.FirstName, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.MiddleName, null, new { @class = "validation" })
+        </div>
+
+
+
+        <div>
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="PostIndex">
+                    <i class="material-icons">local_post_office</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label post-index">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.PostIndex, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.PostIndex, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="Country">
+                    <i class="material-icons">language</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label city-country-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.Country, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.Country, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="City">
+                    <i class="material-icons">place</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label city-country-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.City, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.City, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.PostIndex, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.Country, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.City, null, new { @class = "validation" })
+        </div>
+
+
+
+        <div>
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="District">
+                    <i class="material-icons">place</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label post-index">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.District, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.District, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="Street">
+                    <i class="material-icons">place</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label city-country-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.Street, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.Street, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="Building">
+                    <i class="material-icons">home</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label city-country-input build-room">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.Building, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.Building, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="Room">
+                    <i class="material-icons">home</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label city-country-input build-room">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.Room, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.Room, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.District, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.Street, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.Building, null, new { @class = "validation" })
+            @Html.ValidationMessageFor(model => model.Room, null, new { @class = "validation" })
+        </div>
+        
+
+
+        <div>
+            <div class="name-field">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="Phone">
+                    <i class="material-icons">phone</i>
+                </label>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label city-country-input">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "mdl-textfield__input inline-input" })
+                        @Html.LabelFor(model => model.Phone, new { @class = "mdl-textfield__label" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "validation" })
+        </div>
+        
+        <p>
+            <button class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Сохранить</button>
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

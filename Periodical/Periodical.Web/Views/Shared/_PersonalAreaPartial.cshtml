@@ -1,0 +1,21 @@
+﻿<div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Личный кабинет</span>
+    <nav class="mdl-navigation">
+        @if (Request.IsAuthenticated)
+        {
+            <a class="mdl-navigation__link" href="">Cчёт</a>
+            <a class="mdl-navigation__link" href="">Подписки</a>
+            <a class="mdl-navigation__link" href="@Url.Action("ShowRequisites", "PersonalArea", new { id = User.Identity.Name })">Реквизиты</a>
+            if (User.IsInRole("Admin"))
+            {
+                <a class="mdl-navigation__link" href="/Admin/Manage">Управление</a>
+            }
+            <a class="mdl-navigation__link" href="/Account/Logout">Выход</a>
+        }
+        else
+        {
+            <a class="mdl-navigation__link" href="/Account/Login">Вход</a>
+            <a class="mdl-navigation__link" href="/Account/Register">Регистрация</a>
+        }
+    </nav>
+</div>

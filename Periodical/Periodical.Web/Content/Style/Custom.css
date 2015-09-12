@@ -1,0 +1,343 @@
+﻿
+.inline-input{
+    display: inline-block;
+}
+.field-validation-error{
+    color: #CD0000;
+    margin-top: -15px;
+    display: block;
+}
+.description{
+    text-align:center;
+}
+fieldset{
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    clear: both;
+}
+button{
+    margin-top: 20px;
+    
+}
+.header-link{
+    text-decoration:none;
+    color: #FFF;
+}
+.validation-summary-errors{
+    color: #CD0000;
+}
+.validation-summary-errors>ul{
+     list-style: none;
+    padding: 0px;
+}
+.rememberMe{
+    display: inline;
+
+}
+.rememberMeText{
+    position:absolute;
+    margin-top: 2px;
+}
+.login-block{
+    width: 40%;
+}
+.rememberMeBlock{
+    width: 300px;
+    margin-left: -20px;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: left;
+
+}
+.login-header{
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+.user-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  margin: 60px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  float : left;
+}
+.user-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('/Images/user.png') bottom right 15% no-repeat #46B6AC;
+}
+.publication-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  margin: 60px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  float : left;
+}
+.publication-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('/Images/publications.png') bottom right 15% no-repeat #46B6AC;
+}
+.admin-menu{
+    display: table;
+    margin: 0 auto;
+}
+.title{
+    font-size: 30px;
+}
+.users-table{
+    display: inline-block;
+    padding-bottom: 10px;
+    
+}
+.users-table td
+{
+    text-align: left;
+}
+.users-table th
+{
+    text-align: center;
+}
+.user-details-item
+{
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.error-404{
+    width: 50%;
+    margin-top: 0px;
+}
+.users-requisities-show{
+    display: inline-block;
+    text-align: left;
+    width: 550px;
+    min-height: 0px;
+    margin-top: 60px;
+}
+.requisities-text{
+    font-size: 15px;
+}
+.equisities-title{
+    font-size: 30px;
+}
+.user-requisities-card-wide.mdl-card {
+    width: 512px;
+    
+}
+
+.user-requisities-demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 70px;
+    background: #0094ff;
+}
+
+.user-requisities-demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.name-field{
+    display: inline-block;
+}
+.validation{
+    display: inline;
+    padding-right: 15px;
+}
+.post-index{
+    width: 140px;
+    margin-right: 60px;
+}
+.name-input{
+    width: 200px;
+    margin-top: 15px;
+}
+.city-country-input{
+    width: 200px;
+}
+.build-room{
+    width: 80px;
+}
+.user-control-button{
+    margin-top: -5px;
+
+}
+.role-control-button{
+    margin-top: -7px;
+    font-size: 12px;
+    height: 15px;
+    padding-bottom: 19px;
+}
+.change-deny{
+    font-size: 12px;
+    color: #d15959;
+}
+.user-role-card-wide.mdl-card {
+  width: 512px;
+  display: inline-block;
+  min-height: 0px;
+  margin-top: 30px;
+}
+.user-role-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 60px;
+  background: #0094ff;
+}
+.user-role-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+.user-role-card-body{
+    text-align: left;
+    font-size: 13px;
+}
+.user-image{
+    width: 100px;
+    display: block;
+    float: left;
+    margin-top: -5px;
+}
+.back-to-list-button{
+    margin-top: 20px;
+}
+.cover{
+    float: left;
+}
+.right-side{
+    width: 600px;
+    float: left;
+    margin-left: -15px;
+    text-align: left;
+}
+.public-main-body{
+    width: 850px;
+    display: inline-block;
+    padding-top: 10px;
+}
+.publication-field{
+    margin-left: 30px;
+    width: 550px;
+    margin-top: -30px;
+    margin-left: 20px;
+}
+.publication-input{
+    font-size: 20px;
+}
+.publisher-field{
+    margin-top: -35px
+}
+.description-field{
+    margin-top: -35px;
+    min-height: 140px;
+}
+.period-field{
+
+}
+.title-input{
+    font-weight: bold;
+}
+.public-small-field{
+    width: 150px;
+    margin-right: 25px;
+    margin-left: 20px;
+    margin-top: -20px;
+    float: left;
+    text-align: center;
+}
+.small-field-valid{
+    margin-top: -20px;
+}
+.small-fields{
+    margin-top: -20px;
+}
+.price-icon{
+    margin-left: -90px;
+}
+.choose-file{
+    display: block;
+    clear: both;
+}
+.cover-image{
+    width: 230px;
+    height: 300px;
+    border:solid;
+    border-color: #6DA3BD;
+}
+.public-save{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.description-input{
+    font-family:"Helvetica","Arial",sans-serif;
+    min-height: 150px;
+    font-size: 15px;
+}
+.topic-button{
+    margin-top: -5px;
+    margin-left: 20px;
+    margin-right: -15px;
+}
+
+.publication-info{
+    text-align: left;
+    display: block;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.description-show{
+    min-height: 170px;
+    overflow:hidden;
+    overflow-y:auto;
+    line-height: 19px;
+    text-align: justify;
+    font-size: 15px;
+}
+.price{
+    margin-left: 0px;
+    margin-top: 5px;
+}
+strong{
+    font-weight: bold;
+}
+.publication-title-show{
+    font-size: 27px;
+}
+.vald-message{
+    text-align: center;
+}
+.subscribe-button{
+    margin-top: -10px;
+    margin-right: 7px;
+}
+.edit-link{
+    color: #6DA3BD;
+}
+.edit-link:hover{
+    text-decoration: underline;
+}
+.add-button{
+    margin-left: 20px;
+    margin-top: -45px;
+    position: fixed;
+}
+.add-button:hover{
+    margin-top: -41px;
+}

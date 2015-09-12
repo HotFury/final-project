@@ -1,0 +1,57 @@
+﻿@model Periodical.Web.Models.Account.LogInModel
+
+@{
+    ViewBag.Title = "Вход";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Вход
+}
+@using (Html.BeginForm("Login", "Account")) {
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <h3>Выполните вход</h3>
+        @Html.ValidationSummary(true)
+        <div>
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="Nick">
+                <i class="material-icons">account_box</i>
+            </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Nick, new { @class = "mdl-textfield__input inline-input" })
+                    @Html.LabelFor(model => model.Nick, new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Nick)
+        <div>
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="Password">
+                <i class="material-icons">lock</i>
+            </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Password, new { @class = "mdl-textfield__input inline-input", type = "password" })
+                    @Html.LabelFor(model => model.Password, new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Password)
+        <div class="text-field-div">
+            <div class="editor-field">
+                <div class="rememberMeBlock">
+                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect rememberMe" for="RememberMe">
+                        @Html.CheckBoxFor(x => x.RememberMe, new { @class = "mdl-checkbox__input" })
+                        <span class="mdl-checkbox__label rememberMeText">@Html.DisplayNameFor(x => x.RememberMe)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+            <p>
+                <button class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Войти</button>
+            </p>
+</fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

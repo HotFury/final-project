@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Style/material.min.css")
+    @Styles.Render("~/Content/Style/Material_Icons.css")
+    @Styles.Render("~/Content/Style/Custom.css")
+    @Scripts.Render("~/Content/Style/material.min.js")
+    @Scripts.Render("~/Scripts/jquery-1.8.2.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/confirmScript.js")
+</head>
+<body>
+    <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--waterfall">
+            <!-- Top row, always visible -->
+            
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <a class="header-link" href="/Home/Index">
+                        <span class="mdl-layout-title title">Периодические издания</span>
+                    </a>
+                    <div class="mdl-layout-spacer"></div>
+                        <h4 class="description">@RenderSection("PageDescription")</h4>
+                    </div>
+            
+            <!-- Bottom row, not visible on scroll -->
+            <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                @Html.Partial("_LoginPartial")
+            </div>
+        </header>
+
+        @Html.Partial("_PersonalAreaPartial")
+        <main class="mdl-layout__content">
+            <div class="page-content "><!-- Your content goes here -->
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

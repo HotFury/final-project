@@ -1,0 +1,14 @@
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\obj\Debug\Periodical.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.BusinessLogic.dll.config
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.BusinessLogic.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.BusinessLogic.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.Data.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.Data.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\obj\Debug\Periodical.BusinessLogic.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\obj\Debug\Periodical.BusinessLogic.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.Infrastructure.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.BusinessLogic\bin\Debug\Periodical.Infrastructure.pdb

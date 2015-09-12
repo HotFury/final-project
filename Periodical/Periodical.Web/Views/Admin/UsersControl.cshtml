@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Periodical.Web.Models.Admin.UserControlModel>
+
+@{
+    ViewBag.Title = "Управление пользователями";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Управление пользователями
+}
+<fieldset>
+    <h3>Пользователи</h3>
+
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp users-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nick)
+            </th>
+            <th>
+                Ф. И. О.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDateTime)
+            </th>
+            
+            <th colspan="2">
+                Роли
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                Удалить
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nick)
+                </td>
+                <td>
+                    @item.LastName @item.FirstName @item.MiddleName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDateTime)
+                </td>
+                <td>
+                    @foreach (string role in item.Roles)
+                    {
+                        <span>@role </span>
+                    }
+
+                </td>
+                
+                @if (item.Nick != User.Identity.Name.ToLower())
+                { 
+                    <td>
+                        <a href="@Url.Action("RolesControl", "Admin", new { id = item.UserId })" class="mdl-button mdl-js-button mdl-js-ripple-effect role-control-button">
+                            изменить
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("ToggleActive", "Admin", new { id = item.UserId })" class="mdl-button mdl-js-button mdl-button--icon user-control-button">
+
+                            @if (item.Active)
+                            {
+                                <i class="icon material-icons">lock_open</i>
+                            }
+                            else
+                            {
+                                <i class="icon material-icons">lock_outline</i>
+                            }
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("DeleteUser", "Admin", new { id = item.UserId })" class="mdl-button mdl-js-button mdl-button--icon need-confirm user-control-button">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </td>
+                }
+                else
+                {
+                    <td colspan="3">
+                        <span class="change-deny">Изменения заперещены(текущий пользователь)</span>
+                    </td>
+                }
+                
+            </tr>
+        }
+    </table>
+</fieldset>

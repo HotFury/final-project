@@ -1,0 +1,13 @@
+﻿<nav class="mdl-navigation">
+    @if (Request.IsAuthenticated)
+    {
+        <a class="mdl-navigation__link" href="">@User.Identity.Name</a>
+        <a class="mdl-navigation__link" href="/Account/Logout">Выход</a>
+    }
+    else
+    {
+        <a class="mdl-navigation__link" href="/Account/Login">Вход</a>
+        <a class="mdl-navigation__link" href="/Account/Register">Регистрация</a>
+    }
+    
+</nav>

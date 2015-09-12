@@ -1,0 +1,111 @@
+﻿@model Periodical.Web.Models.Shared.PublicationModel
+
+@{
+    ViewBag.Title = "Редактор издания";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Редактор издания
+}
+<fieldset>
+@using (Html.BeginForm("UpdatePublications", "Admin", FormMethod.Post, new { name = "mainForm" }))
+{
+    @Html.HiddenFor(x => x.PublicationId)
+    <div class="public-main-body">
+        <div class="cover">
+            <div id="result">
+                <img class="cover-image" src="@ViewBag.ImagePath" alt="unavailable" />
+            </div>
+            <div>
+                <div class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent fileUpload">
+                    <span>Загрузить обложку</span>
+                    <input type="file" class="upload" name="image" accept="image/jpeg,image/png" id="uploadImage">
+                </div>
+            </div>
+            <script>
+                $('#uploadImage').on('change', function (e) {
+                    e.preventDefault();
+                    var files = document.getElementById('uploadImage').files;
+                    if (files.length > 0) {
+                        if (window.FormData !== undefined) {
+                            var data = new FormData();
+                            data.append("image", files[0]);
+                            $.ajax({
+                                type: "POST",
+                                url: '@Url.Action("AttachImage", "Admin")',
+                                contentType: false,
+                                processData: false,
+                                data: data,
+                                success: function (result) {
+                                    $("#result").replaceWith(result);
+                                },
+                                error: function (xhr, status, p3) {
+                                    alert("ошибка загрузки")
+                                }
+                            });
+                        } else {
+                            alert("Браузер не поддерживает загрузку файлов HTML5!");
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div class="right-side">
+            <div class="vald-message">
+                @Html.ValidationMessageFor(x => x.Title)
+            </div>
+            <div class="mdl-textfield mdl-js-textfield publication-field">
+                @Html.TextBoxFor(x => x.Title, new { @class = "mdl-textfield__input publication-input title-input" })
+                @Html.LabelFor(x => x.Title, new { @class = "mdl-textfield__label" })
+            </div>
+            <div class="vald-message">
+                @Html.ValidationMessageFor(x => x.Publisher)
+            </div>
+            <div class="mdl-textfield mdl-js-textfield publication-field publisher-field">
+                @Html.TextBoxFor(x => x.Publisher, new { @class = "mdl-textfield__input publication-input" })
+                @Html.LabelFor(x => x.Publisher, new { @class = "mdl-textfield__label" })
+            </div>
+            <div class="vald-message">
+                @Html.ValidationMessageFor(x => x.Description)
+            </div>
+            <div class="mdl-textfield mdl-js-textfield  publication-field description-field">
+                @Html.TextAreaFor(x => x.Description, new { @class = "mdl-textfield__input description-input ", type = "text" })
+                @Html.LabelFor(x => x.Description, new { @class = "mdl-textfield__label" })
+            </div>
+            <div class="vald-message">
+                @Html.ValidationMessageFor(x => x.Topics)
+            </div>
+            <div class="mdl-textfield mdl-js-textfield publication-field">
+                @Html.TextBoxFor(x => x.Topics, new { @class = "mdl-textfield__input publication-input" })
+                @Html.LabelFor(x => x.Topics, new { @class = "mdl-textfield__label" })
+                <div class="mdl-tooltip" for="Topics">
+                    темы вводить через запятую
+                </div>
+            </div>
+            
+            <div class="public-small-field">
+                <div class="mdl-textfield mdl-js-textfield ">
+                    @Html.TextBoxFor(x => x.Price, new { @class = "mdl-textfield__input publication-input" })
+                    @Html.LabelFor(x => x.Price, new { @class = "mdl-textfield__label" })
+                </div>
+
+                @Html.ValidationMessageFor(x => x.Price, null, new { @class = "small-field-valid" })
+            </div>
+            <div class="public-small-field">
+                <div class="mdl-textfield mdl-js-textfield  ">
+                    @Html.TextBoxFor(x => x.TimesInYear, new { @class = "mdl-textfield__input publication-input" })
+                    @Html.LabelFor(x => x.TimesInYear, new { @class = "mdl-textfield__label" })
+                    <div class="mdl-tooltip" for="TimesInYear">
+                        Количество номеров в году
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(x => x.TimesInYear, null, new { @class = "small-field-valid" })
+            </div>
+        </div>
+    </div>
+    <button class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored public-save" onclick="document.mainForm.submit();">Сохранить</button>
+}
+</fieldset>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

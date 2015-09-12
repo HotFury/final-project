@@ -1,0 +1,70 @@
+﻿@model Periodical.Web.Models.Account.RegisterModel
+
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Регистрация
+}
+@using (Html.BeginForm("Register","Account")) {
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <h3>Зарегистрируйтесь</h3>
+        @Html.ValidationSummary(true)
+        <div>
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="Nick">
+                <i class="material-icons">account_box</i>
+            </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Nick, new { @class = "mdl-textfield__input inline-input" })
+                    @Html.LabelFor(model => model.Nick, new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Nick)
+        <div>
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="Email">
+                <i class="material-icons">email</i>
+            </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "mdl-textfield__input inline-input" })
+                    @Html.LabelFor(model => model.Email, new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Email)
+        <div>
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="Password">
+                <i class="material-icons">lock</i>
+            </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Password, new { @class = "mdl-textfield__input inline-input", type = "password" })
+                    @Html.LabelFor(model => model.Password, new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Password)
+        <div>
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="ConfirmPasswod">
+                <i class="material-icons">lock</i>
+            </label>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.ConfirmPasswod, new { @class = "mdl-textfield__input inline-input", type = "password" })
+                    @Html.LabelFor(model => model.ConfirmPasswod, new { @class = "mdl-textfield__label" })
+                </div>
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.ConfirmPasswod)
+            <p>
+                <button class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Зарегистрироваться</button>
+            </p>
+</fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

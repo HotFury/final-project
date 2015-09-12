@@ -1,0 +1,83 @@
+﻿@model Periodical.Web.Models.Admin.UserControlModel
+
+@{
+    ViewBag.Title = "Управление ролями";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section PageDescription{
+    Управление ролями
+}
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+
+<fieldset>
+    @Html.HiddenFor(model => model.UserId)
+
+    <div class="user-role-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">@Html.DisplayFor(model => model.Nick)</h2>
+        </div>
+        <div class="mdl-card__supporting-text user-role-card-body">
+            <img src="/Images/user-card.png" alt="NoAvailable" class="user-image"/>
+            <div>
+                @Html.DisplayFor(model => model.LastName)
+
+                @Html.DisplayFor(model => model.FirstName)
+
+                @Html.DisplayFor(model => model.MiddleName)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.Email): @Html.DisplayFor(model => model.Email)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.CreateDateTime): @Html.DisplayFor(model => model.CreateDateTime)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Active): 
+                @if (Model.Active)
+                {
+                    <span>Разрешён</span>
+                }
+                else
+                {
+                    <span>Запрещён</span>
+                }
+            </div>
+            <div>
+                <span>Роли: </span>
+                @foreach (string role in Model.Roles)
+                {
+                    <span>@role </span>
+                }
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            @if (Model.Roles.Contains("Admin"))
+            {
+                <a href="@Url.Action("DeAttachAdminRole", "Admin", new { id = Model.Nick })" class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored user-role-save-button">Убрать администратора</a>
+            }
+            else
+            {
+                <a href="@Url.Action("AttachAdminRole", "Admin", new { id = Model.Nick })" class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored user-role-save-button">Сделать администратором</a>            
+            }
+            @if(Model.Roles.Contains("Finance"))
+            {
+                <a href="@Url.Action("DeAttachFinanceRole", "Admin", new { id = Model.Nick })" class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored user-role-save-button">Убрать финансиста</a> 
+            }
+            else
+            {
+                <a href="@Url.Action("AttachFinanceRole", "Admin", new { id = Model.Nick })" class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored user-role-save-button">Сделать финансистом</a>         
+            }
+        </div>
+    </div>
+    <div class="back-to-list-button">
+        <a href="@Url.Action("UsersControl", "Admin")" class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored user-role-save-button">назад к списку</a>
+    </div>
+    <span>TODO: role icon toggle</span>
+</fieldset>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

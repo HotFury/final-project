@@ -1,0 +1,17 @@
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.csprojResolveAssemblyReference.cache
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\Periodical.Data.dll.config
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\Periodical.Data.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\Periodical.Data.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\EntityFramework.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\EntityFramework.xml
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\Periodical.Infrastructure.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\bin\Debug\Periodical.Infrastructure.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.Migrations.InitialCreate.resources
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.csproj.GenerateResource.Cache
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.Migrations.publicationfix.resources
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.Migrations.publicationubdateaddfieldTimesInYear.resources
+D:\Study\EPAM\final-project\Periodical\Periodical.Data\obj\Debug\Periodical.Data.Migrations.publicationfixaddpublisher.resources

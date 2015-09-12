@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Periodical.Web.Models.Shared.PublicationModel>
+@{
+    ViewBag.Title = "Главная страница";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+    <label class="mdl-button mdl-js-button mdl-button--icon"
+           for="waterfall-exp">
+        <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" name="sample"
+               id="waterfall-exp" />
+    </div>
+</div>
+}
+
+@foreach (var item in Model)
+{ 
+<fieldset>
+        <div class="public-main-body">
+            <div class="cover">
+                <div id="result">
+                    @if (item.LinkToCover != null)
+                    { 
+                        <img class="cover-image" src="@item.LinkToCover" alt="unavailable" />
+                    }
+                    else
+                    {
+                        <img class="cover-image" src="~/Images/no-cover-image.jpg" alt="unavailable" />
+                    }
+                    <span class="publication-info price">
+                        @Html.DisplayNameFor(x => x.Price):
+                        @Html.DisplayFor(x => item.Price) грн.
+                    </span>
+                    <a class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored subscribe-button"><i class="material-icons">expand_more</i>Отзывы</a>
+                    <a class=" mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored subscribe-button">Подписаться</a>
+                    
+                </div>
+                
+            </div>
+            <div class="right-side">
+                <span class="publication-info publication-title-show">
+                    <strong>@Html.DisplayFor(x => item.Title)</strong>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a href="@Url.Action("EditPublication", "Admin", new { id = item.PublicationId })" class="mdl-navigation__link edit-link" href="">Редактировать</a>
+                        <a href="@Url.Action("DeletePublication", "Admin", new { id = item.PublicationId })" class="mdl-navigation__link edit-link need-confirm" href="">Удалить</a>
+                    }
+                </span> 
+                <span class="publication-info">
+                    @Html.DisplayNameFor(x => x.Publisher): @Html.DisplayFor(x => item.Publisher)
+                </span>
+                <span class="publication-info description-show">
+                    @Html.DisplayFor(x => item.Description)
+                </span>
+                @foreach(string topic in item.TopicList)
+                { 
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect topic-button">
+                        @topic
+                    </a>
+                }
+            </div>
+            
+            
+        </div>
+    
+
+</fieldset>
+}

@@ -1,0 +1,5 @@
+D:\Study\EPAM\final-project\Periodical\Periodical.Infrastructure\bin\Debug\Periodical.Infrastructure.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Infrastructure\bin\Debug\Periodical.Infrastructure.pdb
+D:\Study\EPAM\final-project\Periodical\Periodical.Infrastructure\obj\Debug\Periodical.Infrastructure.csprojResolveAssemblyReference.cache
+D:\Study\EPAM\final-project\Periodical\Periodical.Infrastructure\obj\Debug\Periodical.Infrastructure.dll
+D:\Study\EPAM\final-project\Periodical\Periodical.Infrastructure\obj\Debug\Periodical.Infrastructure.pdb

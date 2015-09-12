@@ -1,0 +1,63 @@
+﻿@model Periodical.Web.Models.PersonalArea.UserRequsitiesModel
+
+@{
+    ViewBag.Title = "Реквизиты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageDescription{
+    Мои реквизиты
+}
+<fieldset>
+    <div class="user-requisities-demo-card-wide mdl-card mdl-shadow--2dp users-requisities-show">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text requisities-title">Реквизиты</h2>
+        </div>
+        <div class="mdl-card__supporting-text requisities-text">
+            <span class="display-field">
+                @Html.DisplayFor(model => model.LastName)
+            </span>
+            <span class="display-field">
+                @Html.DisplayFor(model => model.FirstName)
+            </span>
+            <span class="display-field">
+                @Html.DisplayFor(model => model.MiddleName)
+            </span><br />
+            <span class="display-field">
+                Почтовый индекс: @Html.DisplayFor(model => model.PostIndex)
+            </span><br />
+            <span class="display-field">Страна: 
+                @Html.DisplayFor(model => model.Country)
+            </span><br />
+            <span class="display-field">
+                Город: @Html.DisplayFor(model => model.City)
+            </span><br />
+            @if (Model.District != null)
+            {<span class="display-field">Район: 
+                @Html.DisplayFor(model => model.District)
+                </span>
+            }<br />
+            <span class="display-field">Адрес: 
+                улица @Html.DisplayFor(model => model.Street)
+            </span>
+            <span class="display-field">
+                @Html.DisplayFor(model => model.Building)
+            </span>
+            <span class="display-field">
+                @Html.DisplayFor(model => model.Room)
+            </span><br />
+            <span class="display-field">
+                телефон: @Html.DisplayFor(model => model.Phone)
+            </span>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a href="@Url.Action("ManageRequisities", "PersonalArea", new { id = User.Identity.Name })" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                Редактировать
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+</fieldset>
